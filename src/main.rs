@@ -112,7 +112,7 @@ impl Outputter for Binary {
     fn start(&mut self) {}
     fn peak(&mut self, object_type: &Facility, object_index: &u32, peak: &[u8; 4]) {
         let mut out = std::io::stdout();
-        out.write_u32::<LittleEndian>(object_type.to_interest_mask()).unwrap();
+        out.write_u32::<LittleEndian>(*object_type as u32).unwrap();
         out.write_u32::<LittleEndian>(*object_index).unwrap();
         out.write(peak).unwrap();
         out.flush().unwrap();
