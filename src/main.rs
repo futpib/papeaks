@@ -4,6 +4,7 @@ extern crate lazy_static;
 #[macro_use]
 extern crate arrayref;
 extern crate clap;
+extern crate byteorder;
 extern crate libpulse_binding as pulse;
 
 use std::sync::Mutex;
@@ -15,6 +16,8 @@ use std::collections::HashMap;
 use std::io::Write;
 
 use clap::{Arg, App};
+
+use byteorder::{LittleEndian, WriteBytesExt};
 
 use pulse::mainloop::standard::Mainloop;
 use pulse::context::Context;
@@ -109,10 +112,8 @@ impl Outputter for Binary {
     fn start(&mut self) {}
     fn peak(&mut self, object_type: &Facility, object_index: &u32, peak: &[u8; 4]) {
         let mut out = std::io::stdout();
-        unsafe {
-            out.write(std::mem::transmute::<&u32, &[u8; 4]>(object_index)).unwrap();
-            out.write(&std::mem::transmute::<u32, [u8; 4]>(object_type.to_interest_mask())).unwrap();
-        }
+        out.write_u32::<LittleEndian>(object_type.to_interest_mask()).unwrap();
+        out.write_u32::<LittleEndian>(*object_index).unwrap();
         out.write(peak).unwrap();
         out.flush().unwrap();
     }

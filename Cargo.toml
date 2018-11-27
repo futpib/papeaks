@@ -8,3 +8,4 @@ libpulse-binding = { git = "https://github.com/futpib/pulse-binding-rust.git", b
 arrayref = "0.3.5"
 lazy_static = "1.2.0"
 clap = "2.32.0"
+byteorder = "1.2.7"
