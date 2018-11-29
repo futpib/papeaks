@@ -57,17 +57,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "libpulse-binding"
-version = "2.3.0"
-source = "git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream#339ce472a52b72422a690c716b602d80925decb6"
+version = "2.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)",
- "libpulse-sys 1.4.0 (git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream)",
+ "libpulse-sys 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "libpulse-sys"
 version = "1.4.0"
-source = "git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream#339ce472a52b72422a690c716b602d80925decb6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)",
  "pkg-config 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -81,7 +81,7 @@ dependencies = [
  "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "libpulse-binding 2.3.0 (git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream)",
+ "libpulse-binding 2.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -163,8 +163,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b957d88f4b6a63b9d70d5f454ac8011819c6efa7727858f458ab71c756ce2d3e"
 "checksum lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a374c89b9db55895453a74c1e38861d9deec0b01b405a82516e9d5de4820dea1"
 "checksum libc 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)" = "10923947f84a519a45c8fefb7dd1b3e8c08747993381adee176d7a82b4195311"
-"checksum libpulse-binding 2.3.0 (git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream)" = "<none>"
-"checksum libpulse-sys 1.4.0 (git+https://github.com/futpib/pulse-binding-rust.git?branch=issue-11-drop-failed-stream)" = "<none>"
+"checksum libpulse-binding 2.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fcaa4eaa9119eeeefb510f08a07003c2cbd59dfab13352f93a5f4d096585c00b"
+"checksum libpulse-sys 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "77d41d265aba27f73ef0a0b112cfa9046b90c2c08bec6e1884cffcbb3615e580"
 "checksum pkg-config 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)" = "676e8eb2b1b4c9043511a9b7bea0915320d7e502b0a079fb03f9635a5252b18c"
 "checksum redox_syscall 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)" = "679da7508e9a6390aeaf7fbd02a800fdc64b73fe2204dd2c8ae66d22d9d5ad5d"
 "checksum redox_termios 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7e891cfe48e9100a70a3b6eb652fef28920c117d366339687bd5576160db0f76"
