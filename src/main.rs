@@ -83,7 +83,6 @@ fn on_sink_input_info (res: ListResult<&SinkInputInfo>) {
             sink_inputs.lock().unwrap().insert(sink_input.index);
             sink_input_to_sink.lock().unwrap().insert(sink_input.index, sink_input.sink);
             sink_info_queue.lock().unwrap().insert(sink_input.sink);
-            eprintln!("SinkInputInfo {} {}", sink_input.index, sink_input.sink);
         },
         _ => {},
     }
@@ -93,7 +92,6 @@ fn on_sink_info (res: ListResult<&SinkInfo>) {
     match res {
         ListResult::Item(sink) => {
             sink_to_monitor.lock().unwrap().insert(sink.index, sink.monitor_source);
-            eprintln!("SinkInfo {} {}", sink.index, sink.monitor_source);
         },
         _ => {},
     }
@@ -213,7 +211,6 @@ fn main() {
     context.borrow().introspect().get_sink_input_info_list(on_sink_input_info);
 
     context.borrow_mut().set_subscribe_callback(Some(Box::new(|facility, operation, index| {
-        eprintln!("{:?} {:?} {:?}", facility, operation, index);
         match facility {
             Some(Facility::Source) => match operation {
                 Some(Operation::New) => { sources.lock().unwrap().insert(index); },
